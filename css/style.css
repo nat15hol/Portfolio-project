@@ -1,7 +1,19 @@
+Vi behöver nog rensa upp i följande. Jag misstänker att det finns flera instanser av samma
+
 html, body {
   height: 100%;
   margin: 0;
 }
+
+body {
+  background-color: rgb(145, 209, 255);
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== NAV ===== */
 nav a:link,
 nav a:visited,
 nav a:active,
@@ -12,55 +24,195 @@ nav a:hover {
 
 nav a {
   margin-right: 18px;
-  color: black;
-  text-decoration: none;
 }
 
-body {
-  background-color: pink;
-  font-family: Arial, sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  padding: 20px;
-  box-sizing: border-box;
-}
+/* ===== MAIN CONTENT ===== */
+
 
 /* ===== FOOTER ===== */
 footer {
+  max-width: 1100px;     /* samma som .container */
+  margin: auto;          /* centrerar footern */
   margin-top: auto;
-  margin-bottom: 20px;
   font-size: 10px;
+  margin-bottom: 20px;
 }
 
 .footer-row {
   display: flex;
+  gap: 7px; /* öka eller minska efter smak */
 }
 
-.footer-copy {
-  margin-top: 10px;
-  text-align: center;
-}
-
-/* varje kolumn */
 .footer-column {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 12px;
 }
 
-/* länkar */
+.footer-copy {
+  text-align: center;
+  margin-top: 17px;
+  font-size: 10px;
+}
+
+/* links */
 footer a {
   text-decoration: none;
   color: black;
   display: inline-block;
 }
 
+/* typography */
 h2 {
   font-family: 'Pacifico', cursive;
+  font-size: 14px;
+}
+.h2-alt {
+  font-family: 'Pacifico', cursive;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 p {
   font-size: 14px;
+}
+
+.big-line {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 60px auto 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: nowrap;
+  margin-top: 40px; /* Lägg till detta */
+}
+
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-right {
+  margin-top: 20px; /* justera efter smak */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-right img {
+  max-width: 125px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.site-name {
+  margin: 0;
+}
+.top-nav {
+  margin-left: 40px;
+}
+
+.icon {
+  width: 26px;
+  height:11px;
+  fill: currentColor;
+  margin-right: 3px;
+  flex-shrink: 0;
+}
+
+.page-content {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.page-content p {
+  max-width: 500px;
+}
+.content-inner {
+  max-width: 700px;   /* eller 600px, välj vad som passar */
+  margin: 0 auto;     /* centrerar blocket */
+}
+.content-inner p {
+  max-width: 500px;   /* läsbar textbredd */
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.top-header {
+  flex-shrink: 0;
+}
+
+
+
+.top-nav a {
+    text-decoration: none;
+    padding-bottom: 4px;
+    opacity: 0.6;
+    transition: opacity 0.5s;
+}
+
+.top-nav a.active {
+    color: black;
+    font-weight: 500; /* eller 600 om du vill ha lite mer tyngd */
+    opacity: 1;
+}
+
+.top-nav a:hover {
+    opacity: 1;
+}
+
+.pink-box {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: rgb(35, 50, 255);
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.loaded-only {
+  display: none;
+}
+
+.loaded .loaded-only {
+  display: inline-block;
+}
+
+.js-loaded .loaded-only {
+  opacity: 1;
+}
+.loaded .loaded-only {
+  opacity: 1;
+}
+.pulse-flash {
+  animation: pulseFlash 0.4s ease-out;
+}
+
+@keyframes pulseFlash {
+  0% { background-color: #ff69b4; }
+  100% { background-color: inherit; }
 }
